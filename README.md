@@ -40,4 +40,4 @@ systemctl [option] supervisor.service # supervisor (守护进程 守护pdnsd)
 
 * **请在脚本安装完成后手动将服务器配置在 /etc/shadowsocks/config.json , 后重启dnsmasq , pdnsd , shadowsocks三个服务**
 
-* **安装过程中会使用到 /etc/rc.local文件, 为了保险已经在处理前对先脚本进行了备份, 位置在: /etc/rc.lcoal.bak**
+* **安装过程中会使用到 /etc/rc.local文件, 为了保险已经在处理前对先脚本进行了备份, 位置在: /etc/rc.local.bak**
