@@ -186,12 +186,14 @@ add_ss_service() {
     cat>$service_file<<EOF
 [Unit]
 Description=Shadowsocks-Libev-${service_name}
-After=network.target rc-local.service
+Wants=network-online.target
+After=network.target network-online.target
 
 
 [Service]
 Type=simple
-CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 ExecStart=${service_exec}
 
 [Install]
